@@ -1,5 +1,5 @@
 module.exports = func => {
-    return (err, res, req) => {
-        func(err, res, req).catch(next);
+    return (res, req, next) => {
+        func(res, req, next).catch(next);
     }
 }
