@@ -1,9 +1,6 @@
 <% layout('layouts/boilerplate') -%>
 <link rel="stylesheet" href="/stylesheets/star.css">
 
-<script>
-   const mapBoxToken = '<%-process.env.MAPBOX_TOKEN%>';
-</script>
 
 <div class="row">
   <div class="col-6">
@@ -96,5 +93,10 @@
     <%}%>
  </div>
 </div>
+
+<script>
+   const mapBoxToken = '<%-process.env.MAPBOX_TOKEN%>';
+   const campground = '<%-JSON.stringify(campground)%>';
+</script>
 
 <script src="/javascript/showPageMap.js"></script>
