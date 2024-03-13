@@ -1,7 +1,13 @@
 <% layout('layouts/boilerplate') -%>
 <link rel="stylesheet" href="/stylesheets/star.css">
+
+<script>
+   const mapBoxToken = '<%-process.env.MAPBOX_TOKEN%>';
+</script>
+
 <div class="row">
   <div class="col-6">
+   <div id='map' style='width: 400px; height: 300px;'></div>
      <div class="card mb-3">
        <div id="campgroundCarousel" class="carousel slide" data-ride="carousel">
          <div class="carousel-inner">
@@ -90,3 +96,5 @@
     <%}%>
  </div>
 </div>
+
+<script src="/javascript/showPageMap.js"></script>
