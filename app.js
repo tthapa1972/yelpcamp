@@ -18,6 +18,7 @@ const flash = require('connect-flash');
 const passport = require('passport');
 const LocalStrategy = require('passport-local');
 const User = require('./models/user');
+const mongoSanitize = require('express-mongo-sanitize');
 
 mongoose.connect('mongodb://localhost:27017/yelp-camp', { useNewUrlParser: true, useUnifiedTopology: true });
 
@@ -51,6 +52,8 @@ app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(session(sessionConfig));
 app.use(flash());
+
+app.use(mongoSanitize());
 
 app.use(passport.initialize());
 app.use(passport.session())
